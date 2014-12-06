@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+var cnt=0;
+function fun()
+{
+	cnt++;
+}
+function as()
+{
+		var x=document.getElementById('check').value;
+		alert(x);
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+<?php
+?>
+<body>
+<form method="post">
+<input type="checkbox" name="language[]" value="php" onclick="fun();"  />PHP<br />
+<input type="checkbox" name="language[]" value="html"  onclick="fun();"/>HTML<br />
+<input type="checkbox" name="language[]" value="java" onclick="fun();"/>Java<br />
+<input type="checkbox" name="language[]" value="c++"  onclick="fun();"/>C++<br />
+<input type="radio" name="radio" value="rad" />hey<br />
+<input type="checkbox" name="check" value="check" id="check"/> Check
+<input type="button" value="send"  name="send"  onclick="as();">
+</form>
+<?php 
+$lan="";
+if(!empty($_POST['language'])) {
+    foreach($_POST['language'] as $check) {
+			$lan=$lan.$check.",";
+    }
+	echo $lan;
+}
+?>
+</body>
+</html>

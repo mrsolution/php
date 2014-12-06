@@ -1,0 +1,8 @@
+$("#progress_bar").animate({width:"100%"},{
+    step: function( now, fx ) {
+        if(fx.prop == 'width') { //If you animate more than 1 property
+            var data =  Math.round(now);
+            $( "#percent" ).html(data+' % ');
+        }
+    },duration:8000}//function pourcentages 
+); //animate
